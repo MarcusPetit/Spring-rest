@@ -1,1 +1,6 @@
-spring.application.name=rest-java-spring
+spring:
+  application:
+    name: rest-java-spring
+
+server:
+  port: 8080  # ou qualquer outra porta que você deseja usar

@@ -1,3 +1,5 @@
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/NaoSuportaContaException.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/MathController.java
 /home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/RestJavaSpringApplication.java
-/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/GreetingController.java
-/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/Greeting.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/handler/RespostaCustomizadaEntityExceptionHendler.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/ExceptionResponse.java
