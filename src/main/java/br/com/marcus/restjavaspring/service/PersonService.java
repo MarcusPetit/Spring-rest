@@ -20,13 +20,7 @@ public class PersonService {
     }
 
     public Person findById(Long id) {
-        Person person = new Person();
-        person.setId(counter.incrementAndGet());
-        person.setNome("marcus");
-        person.setEndereco("Brasil");
 
-        person.setUltimoNome("Petit");
-        person.setGenero("Mascolino");
         return repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sem o id"));
     }
 
@@ -40,11 +34,16 @@ public class PersonService {
                         .findById(person.getId())
                         .orElseThrow(
                                 () -> new ResourceNotFoundException("nao foi encomtrado o id"));
+
+        entity.setNome(person.getNome());
+        entity.setEndereco(person.getEndereco());
+        entity.setUltimoNome(person.getUltimoNome());
+        entity.setGenero(person.getGenero());
         return repository.save(entity);
     }
 
     public void delete(Long id) {
-        var entity =
+        Person entity =
                 repository
                         .findById(id)
                         .orElseThrow(
