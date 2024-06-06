@@ -5,4 +5,5 @@
 /home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/RestJavaSpringApplication.java
 /home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/handler/RespostaCustomizadaEntityExceptionHendler.java
 /home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/service/PersonService.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/dto/PersonDTO.java
 /home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/ExceptionResponse.java

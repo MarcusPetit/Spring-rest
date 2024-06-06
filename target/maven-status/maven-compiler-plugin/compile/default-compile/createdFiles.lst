@@ -1,5 +1,6 @@
 br/com/marcus/restjavaspring/model/Person.class
 br/com/marcus/restjavaspring/exceptions/handler/RespostaCustomizadaEntityExceptionHendler.class
+br/com/marcus/restjavaspring/dto/PersonDTO.class
 br/com/marcus/restjavaspring/controllers/PersonController.class
 br/com/marcus/restjavaspring/service/PersonService.class
 br/com/marcus/restjavaspring/exceptions/ExceptionResponse.class

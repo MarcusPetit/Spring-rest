@@ -1,6 +1,6 @@
 package br.com.marcus.restjavaspring.controllers;
 
-import br.com.marcus.restjavaspring.model.Person;
+import br.com.marcus.restjavaspring.dto.PersonDTO;
 import br.com.marcus.restjavaspring.service.PersonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,21 +24,21 @@ public class PersonController {
     @Autowired private PersonService service;
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Person findByID(@PathVariable(value = "id") Long id) {
+    public PersonDTO findByID(@PathVariable(value = "id") Long id) {
         return service.findById(id);
     }
 
     @PostMapping(
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Person create(@RequestBody Person person) {
+    public PersonDTO create(@RequestBody PersonDTO person) {
         return service.create(person);
     }
 
     @PutMapping(
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Person update(@RequestBody Person person) {
+    public PersonDTO update(@RequestBody PersonDTO person) {
         return service.updade(person);
     }
 
@@ -49,7 +49,7 @@ public class PersonController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Person> findAll() {
+    public List<PersonDTO> findAll() {
         return service.findAll();
     }
 }

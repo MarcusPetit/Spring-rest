@@ -1,5 +1,6 @@
 package br.com.marcus.restjavaspring.service;
 
+import br.com.marcus.restjavaspring.dto.PersonDTO;
 import br.com.marcus.restjavaspring.exceptions.ResourceNotFoundException;
 import br.com.marcus.restjavaspring.model.Person;
 import br.com.marcus.restjavaspring.repositories.PersonRepository;
@@ -8,27 +9,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /** PersonService */
 @Service
 public class PersonService {
 
-    @Autowired PersonRepository repository;
+    @Autowired private PersonRepository repository;
 
-    public List<Person> findAll() {
-        return repository.findAll();
+    public List<PersonDTO> findAll() {
+        List<Person> entity = repository.findAll();
+        List<PersonDTO> dto =
+                entity.stream().map(person -> new PersonDTO(person)).collect(Collectors.toList());
+        return dto;
     }
 
-    public Person findById(Long id) {
-
-        return repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sem o id"));
+    public PersonDTO findById(Long id) {
+        Person entity =
+                repository
+                        .findById(id)
+                        .orElseThrow(() -> new ResourceNotFoundException("Sem o id"));
+        PersonDTO dto = new PersonDTO(entity);
+        return dto;
     }
 
-    public Person create(Person person) {
-        return repository.save(person);
+    public PersonDTO create(PersonDTO person) {
+        Person entity = new Person(person);
+        Person saveEntity = repository.save(entity);
+        return new PersonDTO(saveEntity);
     }
 
-    public Person updade(Person person) {
+    public PersonDTO updade(PersonDTO person) {
         Person entity =
                 repository
                         .findById(person.getId())
@@ -39,7 +50,8 @@ public class PersonService {
         entity.setEndereco(person.getEndereco());
         entity.setUltimoNome(person.getUltimoNome());
         entity.setGenero(person.getGenero());
-        return repository.save(entity);
+        Person saveEntity = repository.save(entity);
+        return new PersonDTO(saveEntity);
     }
 
     public void delete(Long id) {

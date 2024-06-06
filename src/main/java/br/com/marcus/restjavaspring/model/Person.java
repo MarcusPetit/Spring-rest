@@ -1,5 +1,7 @@
 package br.com.marcus.restjavaspring.model;
 
+import br.com.marcus.restjavaspring.dto.PersonDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -41,6 +43,14 @@ public class Person {
         this.ultimoNome = ultimoNome;
         this.endereco = endereco;
         this.genero = genero;
+    }
+
+    public Person(PersonDTO persondto) {
+        this.id = persondto.getId();
+        this.nome = persondto.getNome();
+        this.ultimoNome = persondto.getUltimoNome();
+        this.endereco = persondto.getEndereco();
+        this.genero = persondto.getGenero();
     }
 
     public Long getId() {
