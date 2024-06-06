@@ -1,9 +1,8 @@
 package br.com.marcus.restjavaspring.exceptions;
 
-
 import java.util.Date;
 
-public class ExceptionResponse   {
+public class ExceptionResponse {
 
     private Date timestamp;
     private String message;

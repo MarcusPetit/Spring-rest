@@ -1,6 +1,13 @@
 spring:
-  application:
-    name: rest-java-spring
-
-server:
-  port: 8080  # ou qualquer outra porta que você deseja usar
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rest_spring?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: Kl156hYh-a
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false

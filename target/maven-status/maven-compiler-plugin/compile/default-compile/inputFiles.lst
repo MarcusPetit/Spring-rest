@@ -1,5 +1,8 @@
-/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/NaoSuportaContaException.java
-/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/MathController.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/repositories/PersonRepository.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/controllers/PersonController.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/ResourceNotFoundException.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/model/Person.java
 /home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/RestJavaSpringApplication.java
 /home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/handler/RespostaCustomizadaEntityExceptionHendler.java
+/home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/service/PersonService.java
 /home/marcus/dev/rest-java/rest-java-spring/src/main/java/br/com/marcus/restjavaspring/exceptions/ExceptionResponse.java
