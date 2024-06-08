@@ -1,6 +1,7 @@
 package br.com.marcus.restjavaspring.service;
 
 import br.com.marcus.restjavaspring.dto.PersonDTO;
+import br.com.marcus.restjavaspring.dto.PersonDTO2;
 import br.com.marcus.restjavaspring.exceptions.ResourceNotFoundException;
 import br.com.marcus.restjavaspring.model.Person;
 import br.com.marcus.restjavaspring.repositories.PersonRepository;
@@ -20,7 +21,7 @@ public class PersonService {
     public List<PersonDTO> findAll() {
         List<Person> entity = repository.findAll();
         List<PersonDTO> dto =
-                entity.stream().map(person -> new PersonDTO(person)).collect(Collectors.toList());
+                entity.stream().map(PersonDTO::new).collect(Collectors.toList());
         return dto;
     }
 
@@ -38,6 +39,13 @@ public class PersonService {
         Person saveEntity = repository.save(entity);
         return new PersonDTO(saveEntity);
     }
+
+    public PersonDTO createV2(PersonDTO2 person) {
+        Person entity = new Person(person);
+        Person saveEntity = repository.save(entity);
+        return new PersonDTO(saveEntity);
+    }
+
 
     public PersonDTO updade(PersonDTO person) {
         Person entity =

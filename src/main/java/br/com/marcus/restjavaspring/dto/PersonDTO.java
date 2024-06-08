@@ -2,16 +2,16 @@ package br.com.marcus.restjavaspring.dto;
 
 import br.com.marcus.restjavaspring.model.Person;
 
+import java.util.Objects;
 
 /** PersonDTO */
-
 public class PersonDTO {
 
     private Long id;
 
     private String nome;
 
-    private String ultimoNome;
+    private String ultimonome;
 
     private String endereco;
 
@@ -20,7 +20,7 @@ public class PersonDTO {
     public PersonDTO(Long id, String nome, String ultimoNome, String endereco, String genero) {
         this.id = id;
         this.nome = nome;
-        this.ultimoNome = ultimoNome;
+        this.ultimonome = ultimoNome;
         this.endereco = endereco;
         this.genero = genero;
     }
@@ -28,7 +28,7 @@ public class PersonDTO {
     public PersonDTO(Person person) {
         id = person.getId();
         nome = person.getNome();
-        ultimoNome = person.getUltimoNome();
+        ultimonome = person.getUltimoNome();
         endereco = person.getEndereco();
         genero = person.getGenero();
     }
@@ -50,11 +50,11 @@ public class PersonDTO {
     }
 
     public String getUltimoNome() {
-        return ultimoNome;
+        return ultimonome;
     }
 
     public void setUltimoNome(String ultimoNome) {
-        this.ultimoNome = ultimoNome;
+        this.ultimonome = ultimoNome;
     }
 
     public String getEndereco() {
@@ -71,5 +71,17 @@ public class PersonDTO {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PersonDTO personDTO)) return false;
+        return getId() == personDTO.getId() && Objects.equals(getNome(), personDTO.getNome()) && Objects.equals(ultimonome, personDTO.ultimonome) && Objects.equals(getEndereco(), personDTO.getEndereco()) && Objects.equals(getGenero(), personDTO.getGenero());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getNome(), ultimonome, getEndereco(), getGenero());
     }
 }
